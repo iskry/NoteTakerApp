@@ -1,11 +1,25 @@
 const router = require('express').Router();
+const path = require('path');
+const fs = require('fs')
 const bodyParser = require('body-parser');
 router.use(bodyParser.json());
-const allNotes = require('../db/db.json');
+const uuid = require('uuid');
 
-// // This code creates a GET endpoint for the '/api/notes' route for rendering notes from allNotes
 router.get('/notes', (req, res) => { 
-    res.json(allNotes.slice(1));
+    res.sendFile(path.join(__dirname, '../db/db.json'));
+});
+
+router.post('/notes', (req, res) => {
+    let db = JSON.parse(fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf8'));
+    res.json(db);
+
+    const newNote = {
+        title: req.body.title,
+        text: req.body.text,
+        id: uuid.v4()
+    };
+    db.push(newNote);
+    fs.writeFileSync(path.join(__dirname, '../db/db.json'), JSON.stringify(db));
 });
 
 router.delete('/notes/:id', (req, res) => {
@@ -13,8 +27,6 @@ router.delete('/notes/:id', (req, res) => {
     console.log(id);
 });
 
-router.post('/notes', (req, res) => {
-    console.log(req.body)
-});
+
 
 module.exports = router;
