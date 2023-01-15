@@ -8,7 +8,6 @@ app.use(express.static('public')); // using the express.static middleware to ser
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
-
 app.listen(PORT, () => { // starting the server and listening on the specified port
     console.log(`Server available at localhost: ${PORT}`); // logging the server availability message to the console
 });
