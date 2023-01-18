@@ -3,7 +3,7 @@
 ## Description  
 This note-taking app allows users to create, read, update, and delete notes. The app uses the Express.js framework to handle routing and server-side logic. Users can access the app via a web browser, and all data is stored in a JSON file using Node.js file system.
 
-See app deployed on [Heroku](https://dashboard.heroku.com/apps/immense-scrubland-78372)
+See app deployed on [Heroku](https://immense-scrubland-78372.herokuapp.com/)
 ![Note Taker](/public/assets/screenshot.png)
 ## Table of Contents
 - [Description](#description)
