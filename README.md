@@ -17,7 +17,7 @@ Run the following line of code in your terminal to install all the needed packag
 ```
 npm i
 ```
-or see app deployed on [Heroku](https://dashboard.heroku.com/apps/immense-scrubland-78372)
+or see app deployed on [Heroku](https://immense-scrubland-78372.herokuapp.com/)
 ## Usage
 
 Once all the packages have been installed, open terminal and run the following code in command line : 
